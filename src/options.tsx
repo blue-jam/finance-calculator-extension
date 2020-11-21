@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-import './style/options.scss';
+import './options.scss';
 
 const OptionPane: React.FC = () => {
     const kButtonColors = ['#3aa757', '#e8453c', '#f9bb2d', '#4688f1'];
