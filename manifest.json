@@ -3,9 +3,25 @@
   "version": "0.0.1",
   "description": "証券会社のページで、DCF法に基づき計算した株の適正価格を表示します",
   "background": {
-    "scripts": ["main.js"],
+    "scripts": ["background.js"],
     "persistent": false
   },
-  "permissions": ["storage"],
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "permissions": ["activeTab", "declarativeContent", "storage"],
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
   "manifest_version": 2
 }

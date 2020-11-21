@@ -1,4 +1,9 @@
+*.log
+*.css
+*.css.map
+
 node_modules
+.sass-cache
 
 /build
 
