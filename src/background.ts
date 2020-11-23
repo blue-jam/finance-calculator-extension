@@ -15,7 +15,7 @@ chrome.runtime.onInstalled.addListener(function () {
             {
                 conditions: [
                     new chrome.declarativeContent.PageStateMatcher({
-                        pageUrl: { hostEquals: 'https://*.sbisec.co.jp/*' },
+                        pageUrl: { hostEquals: 'site3.sbisec.co.jp' },
                     }),
                 ],
                 actions: [new chrome.declarativeContent.ShowPageAction()],

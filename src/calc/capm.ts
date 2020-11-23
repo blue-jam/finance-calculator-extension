@@ -15,5 +15,12 @@ export const calcFairPrice = (
     beta: number,
     expectedRateOfReturnOfIndex: number,
     riskFreeInterestRate: number
-): number =>
-    dividend / calcExpectedRateOfReturn(beta, expectedRateOfReturnOfIndex, riskFreeInterestRate);
+): number => {
+    const expectedRateOfReturn = calcExpectedRateOfReturn(
+        beta,
+        expectedRateOfReturnOfIndex,
+        riskFreeInterestRate
+    );
+    console.log(expectedRateOfReturn);
+    return (dividend / expectedRateOfReturn) * 100;
+};
