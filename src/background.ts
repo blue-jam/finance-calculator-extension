@@ -1,13 +1,21 @@
+import fetchExpectedRateOfReturnTopix from './fetch/topix';
+import { fetchJpBondInterestRate } from './fetch/jpBond';
+
 chrome.runtime.onInstalled.addListener(function () {
-    chrome.storage.sync.set({ color: '#3aa757' }, function () {
-        console.log('The color is green.');
-    });
+    Promise.all([fetchExpectedRateOfReturnTopix(), fetchJpBondInterestRate()]).then(
+        ([expectedRateOfReturnTopix, jpBondInterestRate]) => {
+            chrome.storage.sync.set({ expectedRateOfReturnTopix, jpBondInterestRate }, function () {
+                console.log('Expected Rate of return of TOPIX:', expectedRateOfReturnTopix);
+                console.log('JP bond interest rate:', jpBondInterestRate);
+            });
+        }
+    );
     chrome.declarativeContent.onPageChanged.removeRules(undefined, function () {
         chrome.declarativeContent.onPageChanged.addRules([
             {
                 conditions: [
                     new chrome.declarativeContent.PageStateMatcher({
-                        pageUrl: { hostEquals: 'developer.chrome.com' },
+                        pageUrl: { hostEquals: 'https://*.sbisec.co.jp/*' },
                     }),
                 ],
                 actions: [new chrome.declarativeContent.ShowPageAction()],

@@ -1,7 +1,7 @@
 {
   "name": "ファイナンス計算機",
   "version": "0.0.1",
-  "description": "証券会社のページで、DCF法に基づき計算した株の適正価格を表示します",
+  "description": "証券会社のページで、CAPMに基づき計算した株の公正価格を表示します",
   "background": {
     "scripts": ["background.js"],
     "persistent": false
