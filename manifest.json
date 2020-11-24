@@ -6,8 +6,13 @@
     "scripts": ["background.js"],
     "persistent": false
   },
+  "content_scripts": [
+    {
+      "matches": ["https://*.sbisec.co.jp/*"],
+      "js": ["contentScripts.js"]
+    }
+  ],
   "page_action": {
-    "default_popup": "popup.html",
     "default_icon": {
       "16": "images/icon16.png",
       "32": "images/icon32.png",

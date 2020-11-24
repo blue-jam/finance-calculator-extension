@@ -6,6 +6,10 @@ export const fetchStockBeta = (stockId: string): Promise<number> => {
         .then((text) => new DOMParser().parseFromString(text, 'text/html'))
         .then((document) => {
             const node = document.querySelectorAll('tbody tr');
+            if (node.length < 3) {
+                return 0;
+            }
+
             const row = node.item(2);
             const cell = row.querySelectorAll('td').item(22);
 

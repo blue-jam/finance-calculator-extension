@@ -21,6 +21,6 @@ export const calcFairPrice = (
         expectedRateOfReturnOfIndex,
         riskFreeInterestRate
     );
-    console.log(expectedRateOfReturn);
+    console.log('Expected rate of return:', expectedRateOfReturn);
     return (dividend / expectedRateOfReturn) * 100;
 };

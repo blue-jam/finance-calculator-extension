@@ -6,8 +6,8 @@ module.exports = {
     mode: 'production',
     entry: {
         background: [path.resolve(__dirname, 'src/background.ts')],
-        popup: [path.resolve(__dirname, 'src/popup.tsx')],
         options: [path.resolve(__dirname, 'src/options.tsx')],
+        contentScripts: [path.resolve(__dirname, 'src/contentScripts.tsx')],
     },
     output: {
         path: outputPath,
