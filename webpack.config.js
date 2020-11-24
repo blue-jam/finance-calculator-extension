@@ -1,9 +1,11 @@
 const path = require('path');
 
+const environment = process.env.NODE_ENV || 'dev';
+const devtool = environment === 'dev' ? 'inline-source-map' : undefined;
+
 const outputPath = path.resolve(__dirname, 'build');
 
 module.exports = {
-    mode: 'production',
     entry: {
         background: [path.resolve(__dirname, 'src/background.ts')],
         options: [path.resolve(__dirname, 'src/options.tsx')],
@@ -32,5 +34,5 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
     },
-    devtool: 'inline-source-map',
+    devtool: devtool,
 };

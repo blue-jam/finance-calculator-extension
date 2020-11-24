@@ -9,8 +9,8 @@
   "scripts": {
     "copy-asset": "cp manifest.json build && cp -r html/* build && cp -r images build",
     "prepare-build": "rm -rf build && mkdir build && npm run copy-asset",
-    "build": "yarn prepare-build && webpack",
-    "start": "yarn prepare-build && webpack --watch",
+    "build": "yarn prepare-build && NODE_ENV=prod webpack --mode production",
+    "start": "yarn prepare-build && NODE_ENV=dev webpack --watch --mode development",
     "staticAnalysis": "yarn checkformat && yarn lint",
     "checkformat": "prettier --check .",
     "format": "prettier --write .",
