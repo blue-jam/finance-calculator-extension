@@ -35,3 +35,13 @@ jobs:
         run: yarn validate
       - name: Build
         run: yarn build
+      - name: Pack extension
+        run: |
+          pushd build
+          zip -r finance-calculator-extension.zip *
+          popd
+      - name: Archive artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: finance-calculator-extensions
+          path: build/finance-calculator-extension.zip
