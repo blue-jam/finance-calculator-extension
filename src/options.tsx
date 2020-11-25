@@ -40,7 +40,7 @@ const OptionPane: React.FC = () => {
             </div>
             <div>
                 <label>
-                    日本国債の期待収益率(%):
+                    日本国債の金利(%):
                     <input
                         type="number"
                         value={jpBondInterestRate}
